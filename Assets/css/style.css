@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+:root {
+  --green: #b4e0af;
+  --black: #201f25;
+  --grey: #5e6973;
+  --white: white;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: var(--black);
+  color: white;
+}
+
+.generator__title {
+  margin-top: 3rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--grey);
+}
+
+.generator__container {
+  padding: 0 0.5rem 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  width: 60%;
+  height: 4rem;
+  background-color: var(--grey);
+}
+
+.generated__key {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.copy-btn {
+  height: 80%;
+  filter: invert(89%) sepia(11%) saturate(726%) hue-rotate(64deg) brightness(95%) contrast(89%);
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--grey);
+  width: 60%;
+  margin: 1rem auto;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
