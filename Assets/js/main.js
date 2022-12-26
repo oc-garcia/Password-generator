@@ -51,21 +51,16 @@ function strenghtBar() {
         bar3.className = "strenght-bar-active";
         bar4.className = "strenght-bar-active";
         indicator.innerHTML = "STRONG";
-      } else if (checkboxArray[i] != checked) {
+      }
+    }
+    /*
+    else {
         bar1.className = "strenght-bar";
         bar2.className = "strenght-bar";
         bar3.className = "strenght-bar";
         bar4.className = "strenght-bar";
         indicator.innerHTML = "";
       }
-    }
+      */
   }
-  /*
-  uppercase.checked = false;
-  lowercase.checked = false;
-  numbers.checked = false;
-  symbols.checked = false;
-  */
-
-  console.log("teste");
 }
