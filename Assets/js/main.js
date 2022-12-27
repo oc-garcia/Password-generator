@@ -25,42 +25,41 @@ function strenghtBar() {
   let bar3 = document.getElementById("bar3");
   let bar4 = document.getElementById("bar4");
 
+  let counter = 0;
   for (let i = 0; i < checkboxArray.length; i++) {
     if (checkboxArray[i].checked) {
-      if (i == 0) {
-        bar1.className = "strenght-bar-active";
-        bar2.className = "strenght-bar";
-        bar3.className = "strenght-bar";
-        bar4.className = "strenght-bar";
-        indicator.innerHTML = "VERY WEAK";
-      } else if (i == 1) {
-        bar1.className = "strenght-bar-active";
-        bar2.className = "strenght-bar-active";
-        bar3.className = "strenght-bar";
-        bar4.className = "strenght-bar";
-        indicator.innerHTML = "WEAK";
-      } else if (i == 2) {
-        bar1.className = "strenght-bar-active";
-        bar2.className = "strenght-bar-active";
-        bar3.className = "strenght-bar-active";
-        bar4.className = "strenght-bar";
-        indicator.innerHTML = "MEDIUM";
-      } else if (i == 3) {
-        bar1.className = "strenght-bar-active";
-        bar2.className = "strenght-bar-active";
-        bar3.className = "strenght-bar-active";
-        bar4.className = "strenght-bar-active";
-        indicator.innerHTML = "STRONG";
-      }
+      counter++;
     }
-    /*
-    else {
-        bar1.className = "strenght-bar";
-        bar2.className = "strenght-bar";
-        bar3.className = "strenght-bar";
-        bar4.className = "strenght-bar";
-        indicator.innerHTML = "";
-      }
-      */
+    if (counter == 1) {
+      bar1.className = "strenght-bar-active";
+      bar2.className = "strenght-bar";
+      bar3.className = "strenght-bar";
+      bar4.className = "strenght-bar";
+      indicator.innerHTML = "VERY WEAK";
+    } else if (counter == 2) {
+      bar1.className = "strenght-bar-active";
+      bar2.className = "strenght-bar-active";
+      bar3.className = "strenght-bar";
+      bar4.className = "strenght-bar";
+      indicator.innerHTML = "WEAK";
+    } else if (counter == 3) {
+      bar1.className = "strenght-bar-active";
+      bar2.className = "strenght-bar-active";
+      bar3.className = "strenght-bar-active";
+      bar4.className = "strenght-bar";
+      indicator.innerHTML = "MEDIUM";
+    } else if (counter == 4) {
+      bar1.className = "strenght-bar-active";
+      bar2.className = "strenght-bar-active";
+      bar3.className = "strenght-bar-active";
+      bar4.className = "strenght-bar-active";
+      indicator.innerHTML = "STRONG";
+    } else if (counter == 0) {
+      bar1.className = "strenght-bar";
+      bar2.className = "strenght-bar";
+      bar3.className = "strenght-bar";
+      bar4.className = "strenght-bar";
+      indicator.innerHTML = "";
+    }
   }
 }
