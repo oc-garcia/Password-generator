@@ -64,7 +64,78 @@ function strenghtBar() {
   }
 }
 
-let uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-let lowercaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+let uppercaseArray = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+let lowercaseArray = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 let numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let symbolsArray = ["!", "#", "$", "%", "&", "*", "@"]
+let symbolsArray = ["!", "#", "$", "%", "&", "*", "@"];
+
+let submit = document.getElementById("submit");
+submit.addEventListener("click", shuffleElementes);
+
+function shuffleElementes() {
+  const randomUppercase = uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
+  const randomLowercase = lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
+  const randomNumbers = parseFloat(numbersArray[Math.floor(Math.random() * numbersArray.length)]);
+  const randomSymbols = symbolsArray[Math.floor(Math.random() * symbolsArray.length)];
+
+  let passwordField = document.getElementById("key");
+
+  console.log(randomUppercase);
+  console.log(randomLowercase);
+  console.log(randomNumbers);
+  console.log(randomSymbols);
+}
