@@ -100,6 +100,10 @@ body {
   margin: 0.5rem 0;
 }
 
+.checkbox__container label {
+  cursor: pointer;
+}
+
 .strenght__container {
   display: flex;
   justify-content: space-between;
