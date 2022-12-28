@@ -164,22 +164,21 @@ function shuffleElementes() {
   passwordField.innerHTML = password.substring(0, slider.value);
 }
 
-let copyBtn = document.getElementById("copy-btn");
-copyBtn.addEventListener("click", copyPassword);
+function copyText(htmlElement) {
+  if (htmlElement.innerHTML == "Password") {
+    return;
+  }
 
-function copyPassword() {
-  // Get the text field
-  let copyText = document.getElementById("key");
-
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // used for mobile phone
+  let elementText = htmlElement.innerText;
+  let inputElement = document.createElement("input");
+  inputElement.setAttribute("value", elementText);
+  document.body.appendChild(inputElement);
+  inputElement.select();
   document.execCommand("copy");
-
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
-
-  console.log("copyText.innerHTML");
+  document.body.removeChild(inputElement);
+  alert("Passwords copied successfully!");
 }
+
+document.querySelector("#copy-btn").onclick = function () {
+  copyText(document.querySelector("#key"));
+};
