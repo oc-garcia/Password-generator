@@ -123,19 +123,63 @@ let lowercaseArray = [
 let numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let symbolsArray = ["!", "#", "$", "%", "&", "*", "@"];
 
+function returnSelected(prmt) {
+  return prmt.checked;
+}
+
 let submit = document.getElementById("submit");
 submit.addEventListener("click", shuffleElementes);
 
 function shuffleElementes() {
-  const randomUppercase = uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
-  const randomLowercase = lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
-  const randomNumbers = parseFloat(numbersArray[Math.floor(Math.random() * numbersArray.length)]);
-  const randomSymbols = symbolsArray[Math.floor(Math.random() * symbolsArray.length)];
-
   let passwordField = document.getElementById("key");
 
-  console.log(randomUppercase);
-  console.log(randomLowercase);
-  console.log(randomNumbers);
-  console.log(randomSymbols);
+  let password = "";
+
+  let counter = 0;
+
+  if (
+    uppercase.checked == false &&
+    lowercase.checked == false &&
+    numbers.checked == false &&
+    symbols.checked == false
+  ) {
+    alert("Select at least one criteria");
+  } else {
+    while (counter < slider.value) {
+      if (returnSelected(uppercase)) {
+        password += uppercaseArray[Math.floor(Math.random() * uppercaseArray.length)];
+      }
+      if (returnSelected(lowercase)) {
+        password += lowercaseArray[Math.floor(Math.random() * lowercaseArray.length)];
+      }
+      if (returnSelected(numbers)) {
+        password += numbersArray[Math.floor(Math.random() * numbersArray.length)];
+      }
+      if (returnSelected(symbols)) {
+        password += symbolsArray[Math.floor(Math.random() * symbolsArray.length)];
+      }
+      counter++;
+    }
+  }
+  passwordField.innerHTML = password.substring(0, slider.value);
+}
+
+let copyBtn = document.getElementById("copy-btn");
+copyBtn.addEventListener("click", copyPassword);
+
+function copyPassword() {
+  // Get the text field
+  let copyText = document.getElementById("key");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // used for mobile phone
+  document.execCommand("copy");
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+
+  console.log("copyText.innerHTML");
 }
