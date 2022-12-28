@@ -152,3 +152,19 @@ body {
 .generator_btn:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  .generator__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .input__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .strenght__container {
+    padding: 1rem 0.5rem;
+  }
+}
